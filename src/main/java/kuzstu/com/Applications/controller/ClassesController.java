@@ -1,10 +1,9 @@
 package kuzstu.com.Applications.controller;
 
-import kuzstu.com.Applications.model.Classes;
-
 import java.text.ParseException;
 import java.util.List;
 
+import kuzstu.com.Applications.model.Classes;
 import kuzstu.com.Applications.model.Students;
 import kuzstu.com.Applications.persistence.DB;
 
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("Application/classes")
 public class ClassesController {
+
     private final List<Classes> classesList;
     public ClassesController() throws ParseException {
         this.classesList = DB.getClassesList();
@@ -43,7 +43,7 @@ public class ClassesController {
     public List<Students> getStudentsByClassId(@PathVariable("class_id") int classId) throws ParseException {
         List<Students> studentsList = DB.getStudentList();
         return studentsList.stream()
-                .filter(students -> students.classId == classId)
+                .filter(students -> students.classId() == classId)
                 .toList();
     }
 }

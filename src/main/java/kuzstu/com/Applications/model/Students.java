@@ -27,4 +27,8 @@ public class Students {
     public int id() {
         return id;
     }
+
+    public int classId() {
+        return classId();
+    }
 }
