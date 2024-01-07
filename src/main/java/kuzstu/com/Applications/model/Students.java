@@ -3,8 +3,8 @@ package kuzstu.com.Applications.model;
 import java.util.Date;
 
 public record Students(
-        int id,
-        int classId,
+        int id_student,
+        int id_class,
         String name_student,
         Date dater,
         String address,
